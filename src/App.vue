@@ -1,14 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <myheader />
+    <router-view id="router" v-bind:key="$route.path" />
+    <myfooter />
   </div>
 </template>
 
+<script>
+export default {
+  components: {
+    myheader: () => import("@/views/Header.vue"),
+    // mycontent: () => import("@/views/HomePage.vue"),
+    myfooter: () => import("@/views/Footer.vue")
+  }
+};
+</script>
+
 <style>
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
