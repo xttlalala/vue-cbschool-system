@@ -3,12 +3,14 @@
     <myheader />
     <router-view id="router" v-bind:key="$route.path" />
     <myfooter />
+    <alertdialog />
   </div>
 </template>
 
 <script>
 export default {
   components: {
+    alertdialog: () => import("@/components/AlertDialog.vue"),
     myheader: () => import("@/views/Header.vue"),
     // mycontent: () => import("@/views/HomePage.vue"),
     myfooter: () => import("@/views/Footer.vue")

@@ -5,8 +5,29 @@
       <el-col :span="20">
         <div class="grid-content pictures">
           <el-carousel indicator-position="outside">
-            <el-carousel-item v-for="item in 4" :key="item">
-              <!-- <h3>{{ item }}</h3> -->
+            <!-- <el-carousel-item v-for="item in 4" :key="item">
+              <h3>{{ item }}</h3>
+            </el-carousel-item> -->
+            <el-carousel-item>
+              <img
+                src="@/images/activity1.png"
+                style="    width: 1240px;
+    height: 300px;"
+              />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img
+                src="@/images/activity2.png"
+                style="    width: 1240px;
+    height: 300px;"
+              />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img
+                src="@/images/activity2.png"
+                style="    width: 1240px;
+    height: 300px;"
+              />
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -75,7 +96,7 @@
   margin-bottom: 10px;
   margin-left: 25px;
 }
-img {
+.basic-ac-note img {
   height: 170px;
   width: 300px;
   border: solid;

@@ -37,13 +37,44 @@
               <el-button
                 type="primary"
                 icon="el-icon-s-custom"
+                @click="open1 = true"
                 style="margin: 10px 40px 0px 0px; float:right"
               >
                 登录
               </el-button>
             </el-menu>
-
             <div class="line"></div>
+            <el-dialog title="登录" :visible.sync="open1">
+              <el-form>
+                <el-form-item label="用户名" :label-width="formLabelWidth">
+                  <el-input
+                    type="text"
+                    v-model="username"
+                    autocomplete="off"
+                  ></el-input>
+                </el-form-item>
+                <el-form-item label="密码" :label-width="formLabelWidth">
+                  <el-input
+                    type="password"
+                    v-model="password"
+                    autocomplete="off"
+                  ></el-input>
+                </el-form-item>
+              </el-form>
+              <div slot="footer" class="dialog-footer">
+                <el-button
+                  type="danger"
+                  @click="gotoRegister"
+                  style="float:left;margin-left:10px"
+                >
+                  注册
+                </el-button>
+                <el-button @click="open1 = false">取 消</el-button>
+                <el-button type="primary" @click="open1 = false">
+                  确 定
+                </el-button>
+              </div>
+            </el-dialog>
           </div>
         </div>
       </el-col>
@@ -55,6 +86,10 @@
 export default {
   data() {
     return {
+      open1: false,
+      formLabelWidth: "100px",
+      username: null,
+      password: null,
       activeIndex: "1",
       activeIndex2: "1",
       restaurants: [],
@@ -64,6 +99,11 @@ export default {
   },
 
   methods: {
+    gotoRegister() {
+      this.$router.push("/register");
+      this.open1 = false;
+    },
+    //搜索
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
@@ -236,6 +276,12 @@ export default {
 .el-menu-item {
   font-size: 18px;
   padding: 0 30px;
+}
+.el-input {
+  width: 550px;
+}
+.el-form-item label {
+  padding: 0px;
 }
 
 /* 布局 */

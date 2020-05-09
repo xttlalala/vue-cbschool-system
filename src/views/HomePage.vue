@@ -5,8 +5,29 @@
       <el-col :span="20">
         <div class="grid-content pictures">
           <el-carousel indicator-position="outside">
-            <el-carousel-item v-for="item in 4" :key="item">
-              <!-- <h3>{{ item }}</h3> -->
+            <!-- <el-carousel-item v-for="item in 4" :key="item">
+              <h3>{{ item }}</h3>
+            </el-carousel-item> -->
+            <el-carousel-item>
+              <img
+                src="@/images/homepage1.jpg"
+                style="    width: 1235px;
+    height: 299px;"
+              />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img
+                src="@/images/homepage1.jpg"
+                style="    width: 1235px;
+    height: 299px;"
+              />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img
+                src="@/images/homepage1.jpg"
+                style="    width: 1235px;
+    height: 299px;"
+              />
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -67,8 +88,8 @@
   width: 600px;
   height: 200px;
   margin: 10px 0px;
-  /* background: linear-gradient(to bottom right, #8ec5fc, #e0c3fc); */
-  background: linear-gradient(to bottom right, #6495ed, #e1ffff);
+  background: linear-gradient(to bottom right, #8ec5fc, #e0c3fc);
+  /* background: linear-gradient(to bottom right, #6495ed, #e1ffff); */
 }
 .h {
   border-left: 5px solid white;
